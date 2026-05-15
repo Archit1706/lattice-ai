@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "sago-nexus-api"
 version = "0.1.0"
 description = "Sago Nexus — AI-native venture intelligence API"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 
 dependencies = [
     # Web Framework
@@ -97,3 +97,6 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

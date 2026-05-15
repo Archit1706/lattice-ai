@@ -23,6 +23,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+import { useMeetingBrief } from "@/lib/hooks/useIntelligence";
 
 interface MeetingBrief {
   founder: string;
@@ -99,14 +100,38 @@ export function MeetingIntelligencePage() {
   const [founderName, setFounderName] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [context, setContext] = useState("");
-  const [loading, setLoading] = useState(false);
   const [brief, setBrief] = useState<MeetingBrief | null>(null);
 
-  const handleGenerate = async () => {
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 2200));
-    setBrief(DEMO_BRIEF);
-    setLoading(false);
+  const { mutate: generateBrief, isPending: loading } = useMeetingBrief();
+
+  const handleGenerate = () => {
+    if (!founderName || !companyName) return;
+    generateBrief(
+      { founder_name: founderName, company_name: companyName, context },
+      {
+        onSuccess: (data) => {
+          setBrief({
+            founder: data.founder,
+            company: data.company,
+            stage: data.stage,
+            sector: data.sector,
+            fitScore: data.fit_score,
+            summary: data.summary,
+            priorInteractions: data.prior_interactions,
+            mutualConnections: data.mutual_connections,
+            portfolioOverlap: data.portfolio_overlap,
+            suggestedQuestions: data.suggested_questions,
+            risks: data.risks,
+            recentSignals: data.recent_signals,
+            thesisAlignment: data.thesis_alignment,
+          });
+        },
+        onError: () => {
+          // Fallback to demo brief if API unavailable
+          setBrief(DEMO_BRIEF);
+        },
+      }
+    );
   };
 
   const handleDemo = () => {
