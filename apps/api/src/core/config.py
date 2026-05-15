@@ -1,7 +1,6 @@
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -18,14 +17,15 @@ class Settings(BaseSettings):
     app_host: str = "0.0.0.0"
     app_port: int = 8000
     app_secret_key: str = "change-me-in-production"
-    allowed_origins: list[str] = ["http://localhost:3000"]
+    # Stored as a plain string so pydantic-settings never attempts JSON-decoding.
+    # Use the `cors_origins` property wherever a list is needed.
+    allowed_origins: str = "http://localhost:3000"
 
-    @field_validator("allowed_origins", mode="before")
-    @classmethod
-    def parse_allowed_origins(cls, v: object) -> list[str]:
-        if isinstance(v, str):
-            return [origin.strip() for origin in v.split(",") if origin.strip()]
-        return v  # type: ignore[return-value]
+    @property
+    def cors_origins(self) -> list[str]:
+        if not self.allowed_origins:
+            return ["http://localhost:3000"]
+        return [o.strip() for o in self.allowed_origins.split(",") if o.strip()]
 
     # Database
     database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/sago_nexus"
