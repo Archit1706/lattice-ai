@@ -75,7 +75,7 @@ class Signal(Base, TimestampMixin):
     source: Mapped[str | None] = mapped_column(String(255))
     source_url: Mapped[str | None] = mapped_column(String(1000))
     relevance_score: Mapped[float | None] = mapped_column()
-    metadata: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+    extra: Mapped[dict[str, Any]] = mapped_column("metadata", JSON, default=dict)
     detected_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now()
     )

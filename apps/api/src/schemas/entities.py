@@ -56,7 +56,7 @@ class CompanyResponse(CompanyBase):
 
 
 class SignalResponse(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
+    model_config = ConfigDict(from_attributes=True, populate_by_name=True)
 
     id: uuid.UUID
     company_id: uuid.UUID | None = None
@@ -65,7 +65,8 @@ class SignalResponse(BaseModel):
     description: str | None = None
     source: str | None = None
     relevance_score: float | None = None
-    metadata: dict[str, Any] = Field(default_factory=dict)
+    # ORM attribute is `extra`; JSON/API key remains `metadata`
+    metadata: dict[str, Any] = Field(default_factory=dict, alias="extra")
     detected_at: datetime
 
 
