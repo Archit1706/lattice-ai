@@ -1,0 +1,99 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sago-nexus-api"
+version = "0.1.0"
+description = "Sago Nexus — AI-native venture intelligence API"
+requires-python = ">=3.12"
+
+dependencies = [
+    # Web Framework
+    "fastapi>=0.115.6",
+    "uvicorn[standard]>=0.32.1",
+    "httpx>=0.28.1",
+    "python-multipart>=0.0.19",
+    "websockets>=14.1",
+
+    # Database
+    "sqlalchemy>=2.0.36",
+    "alembic>=1.14.0",
+    "asyncpg>=0.30.0",
+    "psycopg2-binary>=2.9.10",
+
+    # Graph DB
+    "neo4j>=5.27.0",
+
+    # Vector DB
+    "weaviate-client>=4.10.1",
+
+    # Cache
+    "redis>=5.2.1",
+
+    # AI / LLM
+    "openai>=1.58.1",
+    "anthropic>=0.40.0",
+    "langchain>=0.3.12",
+    "langchain-openai>=0.2.12",
+    "langchain-anthropic>=0.3.3",
+    "langgraph>=0.2.61",
+    "llama-index>=0.12.1",
+    "instructor>=1.7.0",
+
+    # Data / Validation
+    "pydantic>=2.10.3",
+    "pydantic-settings>=2.7.0",
+
+    # Background Tasks
+    "celery>=5.4.0",
+    "flower>=2.0.1",
+
+    # Auth
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+
+    # Utilities
+    "python-dotenv>=1.0.1",
+    "tenacity>=9.0.0",
+    "structlog>=24.4.0",
+    "rich>=13.9.4",
+    "httpx>=0.28.1",
+    "feedparser>=6.0.11",
+    "beautifulsoup4>=4.12.3",
+    "aiofiles>=24.1.0",
+    "python-dateutil>=2.9.0",
+
+    # Observability
+    "opentelemetry-api>=1.29.0",
+    "opentelemetry-sdk>=1.29.0",
+    "opentelemetry-instrumentation-fastapi>=0.50b0",
+    "sentry-sdk[fastapi]>=2.19.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "httpx>=0.28.1",
+    "ruff>=0.8.4",
+    "mypy>=1.14.0",
+    "pre-commit>=4.0.1",
+    "faker>=33.1.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+select = ["E", "F", "I", "N", "W", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
