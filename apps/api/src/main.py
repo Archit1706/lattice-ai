@@ -26,8 +26,11 @@ async def lifespan(app: FastAPI):
 
     # Initialize Sentry
     if settings.sentry_dsn:
-        sentry_sdk.init(dsn=settings.sentry_dsn, environment=settings.app_env, traces_sample_rate=0.1)
-        logger.info("sentry_initialized")
+        try:
+            sentry_sdk.init(dsn=settings.sentry_dsn, environment=settings.app_env, traces_sample_rate=0.1)
+            logger.info("sentry_initialized")
+        except Exception as exc:
+            logger.warning("sentry_init_skipped", reason=str(exc))
 
     yield
 
