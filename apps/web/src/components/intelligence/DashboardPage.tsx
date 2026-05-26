@@ -101,7 +101,7 @@ export function DashboardPage() {
             <Activity className="h-3 w-3 text-emerald-400 animate-pulse" />
             <span className="text-[11px] font-medium text-emerald-400">Live Intelligence</span>
           </div>
-          <Button size="sm" variant="nexus">
+          <Button size="sm" variant="lattice">
             <Brain className="h-3.5 w-3.5" />AI Briefing
           </Button>
         </div>

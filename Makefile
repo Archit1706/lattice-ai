@@ -10,7 +10,7 @@ YELLOW := \033[33m
 BLUE := \033[34m
 
 help: ## Show this help
-	@echo "$(BOLD)Sago Nexus — AI Venture Intelligence Platform$(RESET)"
+	@echo "$(BOLD)Lattice — AI Venture Intelligence Platform$(RESET)"
 	@echo ""
 	@echo "$(BOLD)Usage:$(RESET)"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-20s$(RESET) %s\n", $$1, $$2}'
@@ -23,7 +23,7 @@ install: ## Install all dependencies
 	cd apps/api && pip install -e ".[dev]"
 
 dev: ## Start all services in development mode
-	@echo "$(GREEN)Starting Sago Nexus in development mode...$(RESET)"
+	@echo "$(GREEN)Starting Lattice in development mode...$(RESET)"
 	pnpm run dev
 
 dev-web: ## Start frontend only

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Sago Nexus** is an AI-native venture intelligence platform — a full-stack monorepo combining a Next.js 15 frontend, a FastAPI backend, Neo4j graph database, Weaviate vector memory, and 5 AI agents built on Anthropic Claude + OpenAI.
+**Lattice** is an AI-native venture intelligence platform — a full-stack monorepo combining a Next.js 15 frontend, a FastAPI backend, Neo4j graph database, Weaviate vector memory, and 5 AI agents built on Anthropic Claude + OpenAI.
 
 ---
 

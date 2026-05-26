@@ -1,12 +1,12 @@
-name: sago-nexus
+name: lattice
 
 services:
   # ─── Databases ───────────────────────────────────────────────────
   postgres:
     image: postgres:16-alpine
-    container_name: nexus-postgres
+    container_name: lattice-postgres
     environment:
-      POSTGRES_DB: sago_nexus
+      POSTGRES_DB: lattice
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -21,7 +21,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: nexus-redis
+    container_name: lattice-redis
     ports:
       - "6379:6379"
     volumes:
@@ -34,9 +34,9 @@ services:
 
   neo4j:
     image: neo4j:5.26-community
-    container_name: nexus-neo4j
+    container_name: lattice-neo4j
     environment:
-      NEO4J_AUTH: neo4j/nexuspassword
+      NEO4J_AUTH: neo4j/latticepassword
       NEO4J_PLUGINS: '["apoc"]'
       NEO4J_dbms_security_procedures_unrestricted: apoc.*
     ports:
@@ -53,7 +53,7 @@ services:
 
   weaviate:
     image: semitechnologies/weaviate:1.27.2
-    container_name: nexus-weaviate
+    container_name: lattice-weaviate
     environment:
       QUERY_DEFAULTS_LIMIT: 25
       AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
@@ -78,14 +78,14 @@ services:
     build:
       context: ../../apps/api
       dockerfile: Dockerfile
-    container_name: nexus-api
+    container_name: lattice-api
     environment:
       APP_ENV: development
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/sago_nexus
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/lattice
       REDIS_URL: redis://redis:6379/0
       NEO4J_URI: bolt://neo4j:7687
       NEO4J_USERNAME: neo4j
-      NEO4J_PASSWORD: nexuspassword
+      NEO4J_PASSWORD: latticepassword
       WEAVIATE_URL: http://weaviate:8080
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
@@ -105,16 +105,16 @@ services:
     build:
       context: ../../apps/api
       dockerfile: Dockerfile
-    container_name: nexus-worker
+    container_name: lattice-worker
     environment:
       APP_ENV: development
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/sago_nexus
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/lattice
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/1
       CELERY_RESULT_BACKEND: redis://redis:6379/2
       NEO4J_URI: bolt://neo4j:7687
       NEO4J_USERNAME: neo4j
-      NEO4J_PASSWORD: nexuspassword
+      NEO4J_PASSWORD: latticepassword
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
     depends_on:

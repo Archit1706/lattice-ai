@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "sago-nexus-api"
+name = "lattice-api"
 version = "0.1.0"
-description = "Sago Nexus — AI-native venture intelligence API"
+description = "Lattice — AI-native venture intelligence API"
 requires-python = ">=3.10"
 
 dependencies = [

@@ -48,7 +48,7 @@ export function FoundersPage() {
           <Button size="sm" variant="outline" className="gap-1.5 text-xs">
             <SlidersHorizontal className="h-3.5 w-3.5" />Filter
           </Button>
-          <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+          <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
             <Plus className="h-3.5 w-3.5" />Add Founder
           </Button>
         </div>
@@ -73,7 +73,7 @@ export function FoundersPage() {
                 <Card className="group hover:border-primary/30 transition-all cursor-pointer h-full">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3 mb-3">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-nexus text-white text-sm font-bold">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-lattice text-white text-sm font-bold">
                         {getInitials(founder.name)}
                       </div>
                       <div className="flex-1 min-w-0">

@@ -213,7 +213,7 @@ export function MeetingIntelligencePage() {
           </div>
           <div className="flex gap-3 mt-4">
             <Button
-              variant="nexus"
+              variant="lattice"
               onClick={handleGenerate}
               disabled={!founderName || !companyName || loading}
               className="gap-2"

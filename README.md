@@ -1,12 +1,12 @@
-# Sago Nexus — AI-Native Venture Intelligence Platform
+# Lattice — AI-Native Venture Intelligence Platform
 
 > **Palantir for venture capital.** An institutional intelligence layer, relationship operating system, and graph-powered memory engine for modern VC firms.
 
 ---
 
-## What is Sago Nexus?
+## What is Lattice?
 
-Sago Nexus is a production-grade, AI-native platform that transforms how venture capital firms manage relationships, diligence, and institutional knowledge.
+Lattice is a production-grade, AI-native platform that transforms how venture capital firms manage relationships, diligence, and institutional knowledge.
 
 **The problem it solves:** VC firms lose enormous value because institutional memory disappears, partner insights stay trapped in emails, founder relationships are fragmented, and signals are disconnected.
 
@@ -23,7 +23,7 @@ Sago Nexus is a production-grade, AI-native platform that transforms how venture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Sago Nexus Platform                      │
+│                         Lattice Platform                        │
 ├──────────────┬──────────────┬──────────────┬────────────────────┤
 │  Next.js 15  │  FastAPI     │  AI Agents   │  Graph Engine      │
 │  Frontend    │  Backend API │  (6 agents)  │  (Neo4j)           │
@@ -61,7 +61,7 @@ Sago Nexus is a production-grade, AI-native platform that transforms how venture
 ## Project Structure
 
 ```
-sago-nexus/
+lattice/
 ├── apps/
 │   ├── web/                    # Next.js 15 frontend
 │   │   └── src/
@@ -126,8 +126,8 @@ sago-nexus/
 ### 1. Clone and Install
 
 ```bash
-git clone https://github.com/Archit1706/sago-nexus
-cd sago-nexus
+git clone https://github.com/Archit1706/lattice
+cd lattice
 
 # Install dependencies
 make install

@@ -18,8 +18,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        nexus:
-          "bg-gradient-nexus text-white hover:opacity-90 shadow-sm nexus-glow",
+        lattice:
+          "bg-gradient-lattice text-white hover:opacity-90 shadow-sm lattice-glow",
       },
       size: {
         default: "h-9 px-4 py-2",

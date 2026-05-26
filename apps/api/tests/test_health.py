@@ -19,7 +19,7 @@ async def test_root():
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
         response = await client.get("/")
     assert response.status_code == 200
-    assert "Sago Nexus" in response.json()["name"]
+    assert "Lattice" in response.json()["name"]
 
 
 @pytest.mark.asyncio

@@ -59,7 +59,7 @@ export function SignalsPage() {
             Real-time intelligence from funding events, hiring spikes, and market movements
           </p>
         </div>
-        <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+        <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
           <Bell className="h-3.5 w-3.5" />Configure Alerts
         </Button>
       </div>

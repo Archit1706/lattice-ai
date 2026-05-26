@@ -1,4 +1,4 @@
-// Sago Nexus — Shared TypeScript Types
+// Lattice — Shared TypeScript Types
 
 export type EntityType = "founder" | "company" | "investor" | "lp" | "fund" | "sector";
 export type DealStage = "sourcing" | "initial_review" | "diligence" | "partner_meeting" | "term_sheet" | "closed" | "passed";

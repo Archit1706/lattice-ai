@@ -91,7 +91,7 @@ export function MemorySearchPage() {
               />
             </div>
             <Button
-              variant="nexus"
+              variant="lattice"
               onClick={() => handleSearch(query)}
               disabled={isPending || !query.trim()}
               className="gap-2 px-6"

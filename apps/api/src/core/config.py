@@ -28,7 +28,7 @@ class Settings(BaseSettings):
         return [o.strip() for o in self.allowed_origins.split(",") if o.strip()]
 
     # Database
-    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/sago_nexus"
+    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/lattice"
 
     # Redis
     redis_url: str = "redis://localhost:6379/0"

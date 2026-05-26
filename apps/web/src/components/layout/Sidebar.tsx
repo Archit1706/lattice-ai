@@ -72,7 +72,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         {/* Logo */}
         <div className="flex h-14 items-center border-b border-border px-3">
           <div className="flex items-center gap-2.5 overflow-hidden">
-            <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-nexus">
+            <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-lattice">
               <Hexagon className="h-4 w-4 text-white" strokeWidth={2.5} />
             </div>
             <AnimatePresence>
@@ -83,7 +83,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                   exit={{ opacity: 0, width: 0 }}
                   className="text-sm font-semibold tracking-tight text-foreground whitespace-nowrap overflow-hidden"
                 >
-                  Sago Nexus
+                  Lattice
                 </motion.span>
               )}
             </AnimatePresence>

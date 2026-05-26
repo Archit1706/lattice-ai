@@ -45,7 +45,7 @@ export function MemosPage() {
             {data ? `${data.total} memos` : "Loading..."} — investment research and diligence notes
           </p>
         </div>
-        <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+        <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
           <Plus className="h-3.5 w-3.5" />New Memo
         </Button>
       </div>
@@ -199,7 +199,7 @@ export function MemosPage() {
                   <p className="text-sm text-muted-foreground italic">No content yet.</p>
                 )}
                 <div className="flex gap-2 mt-6">
-                  <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+                  <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
                     <Brain className="h-3.5 w-3.5" />Enhance with AI
                   </Button>
                   <Button size="sm" variant="outline" className="text-xs">Edit</Button>

@@ -154,7 +154,7 @@ export function EntityDetailPanel({ node, onClose }: EntityDetailPanelProps) {
 
       {/* Actions */}
       <div className="p-4 border-t border-border space-y-2">
-        <Button size="sm" variant="nexus" className="w-full text-xs">
+        <Button size="sm" variant="lattice" className="w-full text-xs">
           <Network className="h-3.5 w-3.5" />
           Explore Relationships
         </Button>

@@ -6,7 +6,7 @@ from src.core.config import get_settings
 settings = get_settings()
 
 celery_app = Celery(
-    "sago_nexus",
+    "lattice",
     broker=settings.celery_broker_url,
     backend=settings.celery_result_backend,
     include=["src.workers.tasks"],

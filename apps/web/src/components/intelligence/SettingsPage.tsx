@@ -105,7 +105,7 @@ export function SettingsPage() {
                       <p className="text-[10px] text-muted-foreground mt-1">{item.hint}</p>
                     </div>
                   ))}
-                  <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+                  <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
                     <Check className="h-3.5 w-3.5" />Save Keys
                   </Button>
                 </CardContent>
@@ -120,7 +120,7 @@ export function SettingsPage() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    { label: "PostgreSQL", value: "postgresql://localhost:5432/sago_nexus", status: "connected" },
+                    { label: "PostgreSQL", value: "postgresql://localhost:5432/lattice", status: "connected" },
                     { label: "Neo4j Graph DB", value: "bolt://localhost:7687", status: "connected" },
                     { label: "Weaviate Vector DB", value: "http://localhost:8080", status: "connected" },
                     { label: "Redis Cache", value: "redis://localhost:6379", status: "connected" },

@@ -59,7 +59,7 @@ export function DealPipelinePage() {
           <Button size="sm" variant="outline" className="gap-1.5 text-xs">
             <Filter className="h-3.5 w-3.5" />Filter
           </Button>
-          <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+          <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
             <Plus className="h-3.5 w-3.5" />Add Deal
           </Button>
         </div>

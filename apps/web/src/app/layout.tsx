@@ -7,8 +7,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sago Nexus — Venture Intelligence Platform",
-    template: "%s | Sago Nexus",
+    default: "Lattice — Venture Intelligence Platform",
+    template: "%s | Lattice",
   },
   description:
     "AI-native venture intelligence platform. Graph-powered relationship mapping, institutional memory, and proactive deal intelligence for modern VC firms.",
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     "CRM",
     "investment intelligence",
   ],
-  authors: [{ name: "Sago Nexus" }],
+  authors: [{ name: "Lattice" }],
   openGraph: {
     type: "website",
-    siteName: "Sago Nexus",
-    title: "Sago Nexus — Venture Intelligence Platform",
+    siteName: "Lattice",
+    title: "Lattice — Venture Intelligence Platform",
     description: "AI-native venture intelligence for modern VC firms.",
   },
 };

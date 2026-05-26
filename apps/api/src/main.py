@@ -1,4 +1,4 @@
-"""Sago Nexus — FastAPI application entry point."""
+"""Lattice — FastAPI application entry point."""
 from __future__ import annotations
 
 import time
@@ -22,7 +22,7 @@ logger = get_logger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application startup/shutdown lifecycle."""
-    logger.info("sago_nexus_starting", env=settings.app_env, port=settings.app_port)
+    logger.info("lattice_starting", env=settings.app_env, port=settings.app_port)
 
     # Initialize Sentry
     if settings.sentry_dsn:
@@ -34,11 +34,11 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    logger.info("sago_nexus_shutdown")
+    logger.info("lattice_shutdown")
 
 
 app = FastAPI(
-    title="Sago Nexus API",
+    title="Lattice API",
     description="AI-native venture intelligence platform API",
     version="0.1.0",
     docs_url="/docs",
@@ -98,7 +98,7 @@ async def health() -> dict[str, Any]:
 @app.get("/", tags=["system"])
 async def root() -> dict[str, str]:
     return {
-        "name": "Sago Nexus API",
+        "name": "Lattice API",
         "version": "0.1.0",
         "docs": "/docs",
     }

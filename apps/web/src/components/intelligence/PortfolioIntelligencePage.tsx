@@ -54,7 +54,7 @@ export function PortfolioIntelligencePage() {
             Performance tracking and intelligence across all portfolio companies
           </p>
         </div>
-        <Button size="sm" variant="nexus" className="gap-1.5 text-xs">
+        <Button size="sm" variant="lattice" className="gap-1.5 text-xs">
           <PieChart className="h-3.5 w-3.5" />Export Report
         </Button>
       </div>
